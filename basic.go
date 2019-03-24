@@ -5,6 +5,12 @@ import "fmt"
 var aa = 3
 var ss = "kkk"
 
+var (
+	ac = 1
+	bc = 2
+	cc = true
+)
+
 func variableZeroValue() {
 	var a int
 	var s string
@@ -34,4 +40,5 @@ func main() {
 	variableInitialValue()
 	variableTypeDeduction()
 	variableShorter()
+	fmt.Println(aa, ss, ac, bc, cc)
 }
