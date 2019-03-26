@@ -6,13 +6,10 @@ import (
 	"math/cmplx"
 )
 
-var aa = 3
-var ss = "kkk"
-
 var (
-	ac = 1
-	bc = 2
-	cc = true
+	aa = 3
+	ss = "kkk"
+	bb = true
 )
 
 func variableZeroValue() {
@@ -24,7 +21,7 @@ func variableZeroValue() {
 func variableInitialValue() {
 	var a, b int = 3, 4
 	var s string = "abc"
-	fmt.Println(a, s, b)
+	fmt.Println(a, b, s)
 }
 
 func variableTypeDeduction() {
@@ -33,54 +30,46 @@ func variableTypeDeduction() {
 }
 
 func variableShorter() {
-	a, b, c, s := 3, 4, true, "efg"
+	a, b, c, s := 3, 4, true, "def"
 	b = 5
-	var f int
-	fmt.Println(a, b, c, s, f)
+	fmt.Println(a, b, c, s)
 }
 
 func euler() {
-	c := 3 + 4i
-	fmt.Println(
-		cmplx.Pow(math.E, 1i*math.Pi) + 1)
-	fmt.Println(
-		cmplx.Exp(1i*math.Pi) + 1)
-	fmt.Println(cmplx.Abs(c))
+	fmt.Printf("%.3f\n",
+		cmplx.Exp(1i*math.Pi)+1)
 }
 
 func triangle() {
 	var a, b int = 3, 4
+	fmt.Println(calcTriangle(a, b))
+}
+
+func calcTriangle(a, b int) int {
 	var c int
-	c = int(math.Sqrt((float64(a*a + b*b))))
-	fmt.Println(c)
+	c = int(math.Sqrt(float64(a*a + b*b)))
+	return c
 }
 
 func consts() {
-	const filename = "abc.txt"
-	const a, b = 3, 4
 	const (
-		d = "cdd.txt"
-		f = 5
+		filename = "abc.txt"
+		a, b     = 3, 4
 	)
 	var c int
 	c = int(math.Sqrt(a*a + b*b))
-	fmt.Println(filename, c, d, f)
+	fmt.Println(filename, c)
 }
 
 func enums() {
-	/*const (
-		cpp = 0
-		java = 1
-		python = 2
-		golang = 3
-	)*/
 	const (
 		cpp = iota
-		java
+		_
 		python
 		golang
 		javascript
 	)
+
 	const (
 		b = 1 << (10 * iota)
 		kb
@@ -89,17 +78,19 @@ func enums() {
 		tb
 		pb
 	)
-	fmt.Println(cpp, java, python, golang, javascript)
+
+	fmt.Println(cpp, javascript, python, golang)
 	fmt.Println(b, kb, mb, gb, tb, pb)
 }
 
 func main() {
-	fmt.Println("hello world")
+	fmt.Println("Hello world")
 	variableZeroValue()
 	variableInitialValue()
 	variableTypeDeduction()
 	variableShorter()
-	fmt.Println(aa, ss, ac, bc, cc)
+	fmt.Println(aa, ss, bb)
+
 	euler()
 	triangle()
 	consts()
