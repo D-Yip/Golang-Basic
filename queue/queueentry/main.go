@@ -1,8 +1,8 @@
 package main
 
 import (
+	"Golang-Basic/queue"
 	"fmt"
-	"imooc.com/ccmouse/learngo/queue"
 )
 
 func main() {
@@ -15,4 +15,5 @@ func main() {
 	fmt.Println(q.IsEmpty())
 	fmt.Println(q.Pop())
 	fmt.Println(q.IsEmpty())
+
 }
