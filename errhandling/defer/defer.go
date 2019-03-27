@@ -6,7 +6,7 @@ import (
 
 	"bufio"
 
-	"imooc.com/ccmouse/learngo/functional/fib"
+	"Golang-Basic/functional/fib"
 )
 
 func tryDefer() {
