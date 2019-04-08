@@ -1,12 +1,11 @@
 package main
 
 import (
+	"Golang-Basic/functional/fib"
 	"bufio"
 	"fmt"
 	"io"
 	"strings"
-
-	"imooc.com/ccmouse/learngo/functional/fib"
 )
 
 type intGen func() int
