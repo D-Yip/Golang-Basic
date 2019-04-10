@@ -13,7 +13,12 @@ import (
 )
 
 func Fetch(url string) ([]byte, error) {
-	resp, err := http.Get(url)
+	request, err := http.NewRequest(http.MethodGet, url, nil)
+	if err != nil {
+		return nil, err
+	}
+	client := http.Client{}
+	resp, err := client.Do(request)
 	if err != nil {
 		return nil, err
 	}
